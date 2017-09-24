@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" lang="en"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head lang="en" th:replace="fragments/head :: head"></head>
+<body class="gray-bg">
+    <div lang="en" th:replace="fragments/header :: header"></div>
+    <div class="middle-box user-info">
+        <h4 th:text="${'Username: ' + #authentication.getPrincipal().getUsername()}"></h4>
+        <p th:text="${'First Name: ' + #authentication.getPrincipal().getFirstName()}"></p>
+        <p th:text="${'Last Name: ' + #authentication.getPrincipal().getLastName()}"></p>
+        <p th:text="${'Roles: ' + #authentication.getPrincipal().getAuthorities()}"></p>
+        <div><a th:href="@{/changepassword}"><span class="btn btn-primary user-info-button">Change Password</span></a><a th:href="@{/edituser}"><span class="btn btn-primary user-info-button">Edit</span></a></div>
+    </div>
+</body>
+</html>

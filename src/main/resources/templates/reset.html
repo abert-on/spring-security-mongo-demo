@@ -1,0 +1,38 @@
+<html xmlns:th="http://www.thymeleaf.org" lang="en"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head lang="en" th:replace="fragments/head :: head"></head>
+<body class="gray-bg">
+    <div lang="en" th:replace="fragments/header :: header"></div>
+    <div class="middle-box text-center loginscreen animated fadeInDown">
+        <h4>Reset Password</h4>
+
+        <div th:if="${successMessage}" class="alert alert-success"
+             role="alert" th:text=${successMessage}></div>
+
+        <form autocomplete="off" th:action="@{/reset}" method="post">
+            <div class="form-group input-group has-feedback">
+                <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-envelope"></span>
+                </span>
+                <input type="email" name="email"
+                       placeholder="Email Address" class="form-control"
+                       data-error="This email address is invalid" required/>
+                <span class="glyphicon form-control-feedback"></span>
+            </div>
+            <div><input type="submit" value="Reset Password" class="btn btn-primary block full-width m-b"/></div>
+        </form>
+    </div>
+    <!-- jQuery-->
+    <script
+            src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <!-- Bootstrap -->
+    <script
+            src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+
+    <!-- Bootstrap Validator plugin -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.min.js"></script>
+</body>
+</html>
